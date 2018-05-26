@@ -8,8 +8,6 @@ include "phpqrcode-master/qrlib.php";
     $username="root";
     $database="businesscard";
 
-
-
     $conn = new mysqli($hostname, $username, $password, $database);
 
     if (!$conn) {
@@ -18,14 +16,11 @@ include "phpqrcode-master/qrlib.php";
         // echo "connected successfuly";
     }
 
-     
-
 // form data
 $username=$_POST['username'];
 $email=$_POST['email'];
 $contactno=$_POST['contactNo'];
 $cardimagepath="./cards"."/$username".".jpg";
-
 
 // image uploader
 $target_dir = "uploads/";
@@ -72,11 +67,8 @@ if ($uploadOk == 0) {
     }
 }
 
-
-
 function  create_image($imagepath,$username,$email,$contactno,$connection){
-
-       
+        
         $im = @imagecreate(336, 192) or die("Cannot Initialize new GD image stream");
         $background_color = imagecolorallocate($im, 255, 255, 255);
 
